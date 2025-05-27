@@ -117,6 +117,28 @@
         opacity: 0;
       }
     }
+
+    /* Styles pour les boutons de langue */
+    .lang-buttons {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      z-index: 10;
+    }
+
+    .lang-buttons button {
+      background: none;
+      border: none;
+      font-size: 28px;
+      margin-left: 10px;
+      cursor: pointer;
+      color: #c9d1d9;
+      transition: transform 0.2s;
+    }
+
+    .lang-buttons button:hover {
+      transform: scale(1.2);
+    }
   </style>
 </head>
 <body>
@@ -127,21 +149,37 @@
   </ul>
 
   <header>
+    <div class="lang-buttons">
+      <button onclick="changeLang('fr')" title="Français">🇫🇷</button>
+      <button onclick="changeLang('en')" title="English">🇬🇧</button>
+      <button onclick="changeLang('es')" title="Español">🇪🇸</button>
+    </div>
+
     <h1>
       <img src="krn.jpg" alt="Logo Kraken Bot" style="height: 50px; vertical-align: middle; margin-right: 10px;">
-      The Kraken Bot
+      <span data-i18n="title">The Kraken Bot</span>
     </h1>
-    <p>Un bot Discord complet pour la musique, la modération, les sondages, et plus encore.</p>
-    <a href="features.html" class="button" style="background-color:#00ff0d;">Fonctionnalités</a>
-    <a href="https://discord.com/oauth2/authorize?client_id=1362320470547894272&permissions=8&scope=bot%20applications.commands" class="button">Inviter le bot</a>
-    <a href="https://krakentime-winter-paper-1452.fly.dev/" class="button" style="background-color:#0366d6;">Dashboard</a>
-    <a href="https://discord.gg/support" class="button" style="background-color:#6f42c1;">Serveur Support</a>
+    <p data-i18n="subtitle">Un bot Discord complet pour la musique, la modération, les sondages, et plus encore.</p>
+    <a href="features.html" class="button" style="background-color:#00ff0d;" data-i18n="btn_features">Fonctionnalités</a>
+    <a href="https://discord.com/oauth2/authorize?client_id=1362320470547894272&permissions=8&scope=bot%20applications.commands" class="button" data-i18n="btn_invite">Inviter le bot</a>
+    <a href="https://krakentime-winter-paper-1452.fly.dev/" class="button" style="background-color:#0366d6;" data-i18n="btn_dashboard">Dashboard</a>
+    <a href="https://discord.gg/support" class="button" style="background-color:#6f42c1;" data-i18n="btn_support">Serveur Support</a>
   </header>
 
   <footer>
-    <a href="privacy.html">Politique de confidentialité</a> |
-    <a href="terms.html">Conditions d'utilisation</a><br>
+    <a href="privacy.html" data-i18n="footer_privacy">Politique de confidentialité</a> |
+    <a href="terms.html" data-i18n="footer_terms">Conditions d'utilisation</a><br>
     &copy; 2025 The Kraken Bot
   </footer>
+
+  <script src="lang.js"></script>
+  <script>
+    // Charger langue enregistrée ou défaut (fr)
+    window.addEventListener('load', () => {
+      const lang = localStorage.getItem('siteLang') || 'fr';
+      changeLang(lang);
+    });
+  </script>
+
 </body>
 </html>
