@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fonctionnalités - The Kraken Bot</title>
   <style>
     body {
@@ -12,12 +12,16 @@
       margin: 0;
       padding: 0;
       line-height: 1.6;
+      position: relative; /* Pour que les bulles en absolute soient relatives à body */
+      overflow-x: hidden;
     }
 
     header {
       background-color: #161b22;
       padding: 2rem;
       text-align: center;
+      position: relative;
+      z-index: 2; /* Pour passer devant les bulles */
     }
 
     header h1 {
@@ -40,6 +44,8 @@
       max-width: 900px;
       margin: auto;
       padding: 2rem;
+      position: relative;
+      z-index: 2; /* Pour passer devant les bulles */
     }
 
     h2 {
@@ -65,6 +71,8 @@
       font-size: 0.9rem;
       background-color: #161b22;
       color: #6e7681;
+      position: relative;
+      z-index: 2; /* Pour passer devant les bulles */
     }
 
     a {
@@ -90,6 +98,8 @@
       text-decoration: none;
       border-radius: 8px;
       font-weight: bold;
+      position: relative;
+      z-index: 2;
     }
 
     .button:hover {
@@ -103,13 +113,101 @@
     .button.back:hover {
       background-color: #218bff;
     }
+
+    /* Animation bulles */
+    .bubbles {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none; /* Ne pas gêner la sélection ou clic */
+      overflow: visible;
+      z-index: 1;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -100px; /* En dessous de la vue */
+      background: rgba(88, 166, 255, 0.3);
+      border-radius: 50%;
+      opacity: 0.7;
+      animation-name: rise;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    /* Différentes tailles, positions et vitesses pour les bulles */
+    .bubble:nth-child(1) {
+      width: 20px;
+      height: 20px;
+      left: 10%;
+      animation-duration: 8s;
+      animation-delay: 0s;
+    }
+
+    .bubble:nth-child(2) {
+      width: 35px;
+      height: 35px;
+      left: 30%;
+      animation-duration: 10s;
+      animation-delay: 2s;
+      opacity: 0.5;
+    }
+
+    .bubble:nth-child(3) {
+      width: 15px;
+      height: 15px;
+      left: 50%;
+      animation-duration: 7s;
+      animation-delay: 4s;
+    }
+
+    .bubble:nth-child(4) {
+      width: 25px;
+      height: 25px;
+      left: 70%;
+      animation-duration: 12s;
+      animation-delay: 1s;
+      opacity: 0.6;
+    }
+
+    .bubble:nth-child(5) {
+      width: 30px;
+      height: 30px;
+      left: 85%;
+      animation-duration: 9s;
+      animation-delay: 3s;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+      }
+      80% {
+        opacity: 0.3;
+      }
+      100% {
+        transform: translateY(-110vh) scale(1.2);
+        opacity: 0;
+      }
+    }
   </style>
 </head>
 <body>
 
+  <div class="bubbles">
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+  </div>
+
   <header>
     <h1>
-      <img src="krn.jpg" alt="Logo Kraken Bot" class="logo">Fonctionnalités
+      <img src="krn.jpg" alt="Logo Kraken Bot" class="logo" />Fonctionnalités
     </h1>
     <p>Découvrez toutes les commandes et modules disponibles dans The Kraken Bot</p>
     <a href="index.html" class="button back">Retour à l'accueil</a>
@@ -192,4 +290,3 @@
 
 </body>
 </html>
-
