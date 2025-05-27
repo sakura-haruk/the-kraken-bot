@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fonctionnalités - The Kraken Bot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #161b22;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    h2 {
+      margin-top: 2rem;
+      color: #58a6ff;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      margin: 0.5rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid #30363d;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background-color: #161b22;
+      color: #6e7681;
+    }
+
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .emoji {
+      font-size: 1.2rem;
+      margin-right: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📖 Commandes disponibles</h1>
+    <p>Découvrez toutes les fonctionnalités de The Kraken Bot</p>
+  </header>
+
+  <div class="container">
+
+    <h2><span class="emoji">🎶</span> Musique</h2>
+    <ul>
+      <li>[prefix]play [nom/lien] — Joue une musique</li>
+      <li>[prefix]playlist [lien/nom] — Joue une playlist</li>
+      <li>[prefix]add [nom/lien] — Ajoute une musique à la file d'attente</li>
+      <li>[prefix]skip — Passe à la musique suivante</li>
+      <li>[prefix]stop — Arrête la musique</li>
+      <li>[prefix]pause / [prefix]resume — Pause/Reprend la musique</li>
+      <li>[prefix]queue — Affiche la file d'attente</li>
+      <li>[prefix]volume [0-100] — Définit le volume</li>
+      <li>[prefix]loop — Active/Désactive la boucle</li>
+      <li>[prefix]nowplaying — Affiche la musique en cours</li>
+    </ul>
+
+    <h2><span class="emoji">🔨</span> Modération / Sanction</h2>
+    <ul>
+      <li>[prefix]mute @user — Mute un utilisateur</li>
+      <li>[prefix]unmute @user — Unmute un utilisateur</li>
+      <li>[prefix]tempmute @user [durée] — Mute temporairement</li>
+      <li>[prefix]ban @user [raison] — Banni un utilisateur</li>
+      <li>[prefix]listwarn @user — Liste les avertissements</li>
+      <li>[prefix]kick @user [raison] — Expulse un utilisateur</li>
+      <li>[prefix]unban [userId] — Débanni un utilisateur</li>
+      <li>[prefix]warn @user [raison] — Avertit un utilisateur</li>
+      <li>[prefix]unwarn @user — Retire un avertissement</li>
+    </ul>
+
+    <h2><span class="emoji">🛠️</span> Modération / Gestion</h2>
+    <ul>
+      <li>[prefix]clear [nombre] — Supprime des messages</li>
+      <li>[prefix]lock — Verrouille le salon</li>
+      <li>[prefix]unlock — Déverrouille le salon</li>
+      <li>[prefix]slowmode [durée] — Active le mode lent</li>
+      <li>[prefix]lockall — Verrouille tous les salons</li>
+      <li>[prefix]unlockall — Déverrouille tous les salons</li>
+      <li>[prefix]vider-salon — Supprime et recrée le salon</li>
+    </ul>
+
+    <h2><span class="emoji">🤖</span> Auto-react / Message</h2>
+    <ul>
+      <li>[prefix]createcommande [message] — Crée une commande auto</li>
+      <li>[prefix]delcommande [message] — Supprime une commande auto</li>
+      <li>[prefix]listecommandes — Liste les commandes auto</li>
+      <li>[prefix]autorespond [message] — Crée une auto-réponse</li>
+      <li>[prefix]delrespond [numero] — Supprime une auto-réponse</li>
+      <li>[prefix]listrespond — Liste les auto-réponses</li>
+      <li>[prefix]addreact [mot] [emoji] — Ajoute une auto-réaction</li>
+      <li>[prefix]delreact [numero] — Supprime une auto-réaction</li>
+      <li>[prefix]listreact — Liste les auto-réactions</li>
+    </ul>
+
+    <h2><span class="emoji">❓</span> Aide</h2>
+    <ul>
+      <li>[prefix]help — Affiche la liste des commandes</li>
+    </ul>
+
+    <h2><span class="emoji">📊</span> Sondages</h2>
+    <ul>
+      <li>[prefix]poll &lt;question&gt; ; &lt;option1&gt; ; &lt;option2&gt; ... — Crée un sondage</li>
+      <li>[prefix]closepoll &lt;ID&gt; — Ferme un sondage</li>
+    </ul>
+
+    <h2><span class="emoji">🌐</span> Langues</h2>
+    <ul>
+      <li>[prefix]setlangues — Permet de choisir ou retirer ses rôles de langues</li>
+    </ul>
+
+  </div>
+
+  <footer>
+    &copy; 2025 The Kraken Bot — <a href="index.html">Retour à l'accueil</a>
+  </footer>
+
+</body>
+</html>
