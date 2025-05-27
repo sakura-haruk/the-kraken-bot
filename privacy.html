@@ -1,49 +1,98 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Politique de confidentialité – The Kraken Bot</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-            margin: 0;
-            padding: 2rem;
-            max-width: 900px;
-            margin: auto;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Politique de confidentialité – The Kraken Bot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      margin: 0;
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
 
-        h1 {
-            color: #58a6ff;
-        }
+    h1 {
+      color: #58a6ff;
+    }
 
-        a {
-            color: #58a6ff;
-        }
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
 
-        footer {
-            text-align: center;
-            margin-top: 4rem;
-            color: #6e7681;
-        }
-    </style>
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      color: #6e7681;
+    }
+
+    /* Bulles animées */
+    .bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 50%;
+      animation: rise 20s infinite ease-in;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        transform: translateY(-110vh) scale(0.5);
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Politique de confidentialité</h1>
-    <p>
-        The Kraken Bot respecte votre vie privée. Les seules données collectées sont celles nécessaires à son bon fonctionnement (identifiants de serveurs, paramètres personnalisés, rôles, etc.).
-    </p>
-    <p>
-        Aucune information personnelle comme vos messages privés ou adresse e-mail n’est stockée ou partagée avec des tiers. Les données sont utilisées uniquement pour fournir les fonctionnalités du bot.
-    </p>
-    <p>
-        Vous pouvez demander la suppression de vos données en contactant l’équipe via le <a href="https://discord.gg/aXhAQSbM5E">serveur de support</a> ou une commande spécifique.
-    </p>
 
-    <footer>
-        <a href="index.html">Retour à l'accueil</a>
-    </footer>
+  <!-- Bulles animées -->
+  <div class="bubbles">
+    <div class="bubble" style="left: 10%; width: 40px; height: 40px; animation-duration: 15s;"></div>
+    <div class="bubble" style="left: 20%; width: 60px; height: 60px; animation-duration: 20s;"></div>
+    <div class="bubble" style="left: 30%; width: 30px; height: 30px; animation-duration: 18s;"></div>
+    <div class="bubble" style="left: 40%; width: 50px; height: 50px; animation-duration: 22s;"></div>
+    <div class="bubble" style="left: 50%; width: 70px; height: 70px; animation-duration: 17s;"></div>
+    <div class="bubble" style="left: 60%; width: 35px; height: 35px; animation-duration: 19s;"></div>
+    <div class="bubble" style="left: 70%; width: 55px; height: 55px; animation-duration: 16s;"></div>
+    <div class="bubble" style="left: 80%; width: 45px; height: 45px; animation-duration: 23s;"></div>
+    <div class="bubble" style="left: 90%; width: 50px; height: 50px; animation-duration: 21s;"></div>
+  </div>
+
+  <h1>Politique de confidentialité</h1>
+  <p>
+    The Kraken Bot respecte votre vie privée. Les seules données collectées sont celles nécessaires à son bon fonctionnement (identifiants de serveurs, paramètres personnalisés, rôles, etc.).
+  </p>
+  <p>
+    Aucune information personnelle comme vos messages privés ou adresse e-mail n’est stockée ou partagée avec des tiers. Les données sont utilisées uniquement pour fournir les fonctionnalités du bot.
+  </p>
+  <p>
+    Vous pouvez demander la suppression de vos données en contactant l’équipe via le <a href="https://discord.gg/aXhAQSbM5E">serveur de support</a> ou une commande spécifique.
+  </p>
+
+  <footer>
+    <a href="index.html">Retour à l'accueil</a>
+  </footer>
 </body>
 </html>
