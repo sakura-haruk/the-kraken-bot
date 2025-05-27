@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Politique de confidentialité – The Kraken Bot</title>
+  <title data-i18n="terms_title">Conditions d'utilisation – The Kraken Bot</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -17,8 +17,35 @@
       z-index: 1;
     }
 
+    .language-selector {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+    }
+
+    .language-selector select {
+      background: rgba(0, 0, 0, 0.3);
+      color: #c9d1d9;
+      border: 1px solid #58a6ff;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .language-selector select:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.3);
+    }
+
     h1 {
       color: #58a6ff;
+      margin-top: 3rem;
+    }
+
+    h2 {
+      color: #58a6ff;
+      margin-top: 2rem;
     }
 
     a {
@@ -67,6 +94,15 @@
 </head>
 <body>
 
+  <!-- Sélecteur de langue -->
+  <div class="language-selector">
+    <select onchange="changeLang(this.value)" id="languageSelect">
+      <option value="fr">Français</option>
+      <option value="en">English</option>
+      <option value="es">Español</option>
+    </select>
+  </div>
+
   <!-- Bulles animées -->
   <div class="bubbles">
     <div class="bubble" style="left: 10%; width: 40px; height: 40px; animation-duration: 15s;"></div>
@@ -80,60 +116,158 @@
     <div class="bubble" style="left: 90%; width: 50px; height: 50px; animation-duration: 21s;"></div>
   </div>
 
-  <h1>Politique de confidentialité</h1>
+  <h1 data-i18n="terms_title">Conditions d'utilisation</h1>
 
-  <h2>1. Données collectées</h2>
-  <p>
-    The Kraken Bot collecte uniquement les <strong>données nécessaires à son fonctionnement</strong>, telles que :
-  </p>
-  <ul>
-    <li>L'identifiant des serveurs, salons, utilisateurs et rôles.</li>
-    <li>Les préférences et paramètres personnalisés (préfixes, messages de bienvenue, rôles linguistiques, etc.).</li>
-    <li>Les logs d’utilisation (commandes utilisées, erreurs techniques, etc.).</li>
-  </ul>
-  <p><strong>❌ Aucune donnée personnelle sensible</strong> (messages privés, contenus personnels) n’est collectée ni stockée.</p>
+  <h2>1. <span data-i18n="terms_acceptance_title">Acceptation des conditions</span></h2>
+  <p data-i18n="terms_acceptance_text">En utilisant The Kraken Bot (« le Bot »), vous acceptez les présentes conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser le Bot.</p>
 
-  <h2>2. Utilisation des données</h2>
-  <p>
-    Les données collectées sont utilisées uniquement pour :
-  </p>
+  <h2>2. <span data-i18n="terms_authorized_use_title">Utilisation autorisée</span></h2>
+  <p data-i18n="terms_authorized_use_text">Vous vous engagez à :</p>
   <ul>
-    <li>Fournir et améliorer les fonctionnalités du Bot.</li>
-    <li>Gérer la configuration spécifique à chaque serveur.</li>
-    <li>Analyser l'utilisation afin de corriger les bugs et optimiser le Bot.</li>
+    <li data-i18n="terms_authorized_use_item1">Utiliser le Bot de manière conforme aux règles de Discord et à la loi en vigueur.</li>
+    <li data-i18n="terms_authorized_use_item2">Ne pas utiliser le Bot pour harceler, abuser ou nuire à d'autres utilisateurs.</li>
+    <li data-i18n="terms_authorized_use_item3">Ne pas modifier, distribuer ou copier le code source du Bot sans autorisation.</li>
   </ul>
 
-  <h2>3. Partage des données</h2>
-  <p>
-    The Kraken Bot ne partage <strong>aucune donnée</strong> avec des tiers, sauf dans les cas suivants :
-  </p>
+  <h2>3. <span data-i18n="terms_restrictions_title">Restrictions</span></h2>
+  <p data-i18n="terms_restrictions_text">Il est strictement interdit de :</p>
   <ul>
-    <li>Obligation légale ou demande officielle des autorités compétentes.</li>
-    <li>Avec votre consentement explicite.</li>
+    <li data-i18n="terms_restrictions_item1">Utiliser le Bot dans des serveurs qui promeuvent la haine, la violence ou tout contenu illégal.</li>
+    <li data-i18n="terms_restrictions_item2">Exploiter ou tenter d'exploiter des vulnérabilités du Bot.</li>
+    <li data-i18n="terms_restrictions_item3">Surcharger les services via des requêtes abusives.</li>
   </ul>
 
-  <h2>4. Sécurité</h2>
+  <h2>4. <span data-i18n="terms_availability_title">Disponibilité et support</span></h2>
   <p>
-    Les données sont stockées avec soin sur des serveurs sécurisés. Des mesures techniques sont en place pour protéger contre l'accès non autorisé, la modification ou la suppression des données.
+    <span data-i18n="terms_availability_text_1">Le Bot est fourni « tel quel » sans garantie de disponibilité, de stabilité ou de performance.</span><br />
+    <span data-i18n="terms_availability_text_2">Le support est disponible via le </span><a href="https://discord.gg/aXhAQSbM5E" target="_blank" rel="noopener noreferrer" data-i18n="discord_server">serveur Discord officiel</a><span data-i18n="terms_availability_text_3">, mais sans obligation de réponse immédiate.</span>
   </p>
 
-  <h2>5. Durée de conservation</h2>
-  <p>
-    Les données de configuration sont conservées tant que le Bot reste actif sur le serveur. En cas de retrait du Bot d’un serveur, ces données sont supprimées dans un délai raisonnable.
-  </p>
+  <h2>5. <span data-i18n="terms_termination_title">Résiliation</span></h2>
+  <p data-i18n="terms_termination_text">L'équipe de développement se réserve le droit de :</p>
+  <ul>
+    <li data-i18n="terms_termination_item1">Retirer le Bot de tout serveur à sa discrétion, notamment en cas d'abus ou de non-respect des conditions.</li>
+    <li data-i18n="terms_termination_item2">Suspendre ou cesser les mises à jour et le support à tout moment.</li>
+  </ul>
 
-  <h2>6. Vos droits</h2>
-  <p>
-    Vous avez le droit de demander l'accès, la modification ou la suppression de vos données liées au Bot. Pour exercer ces droits, contactez l'équipe via le <a href="https://discord.gg/aXhAQSbM5E" target="_blank" rel="noopener noreferrer">serveur Discord officiel</a>.
-  </p>
-
-  <h2>7. Modifications de la politique</h2>
-  <p>
-    Cette politique de confidentialité peut être mise à jour. En cas de changement significatif, une notification sera communiquée via le serveur Discord officiel.
-  </p>
+  <h2>6. <span data-i18n="terms_modifications_title">Modifications</span></h2>
+  <p data-i18n="terms_modifications_text">Ces conditions peuvent être modifiées à tout moment. En cas de changement majeur, une notification sera faite via le serveur de support ou le site web du Bot.</p>
 
   <footer>
-    <a href="index.html">Retour à l'accueil</a>
+    <a href="index.html" data-i18n="back_to_home">Retour à l'accueil</a>
   </footer>
+
+  <script>
+    const translations = {
+      fr: {
+        terms_title: "Conditions d'utilisation",
+        terms_acceptance_title: "Acceptation des conditions",
+        terms_acceptance_text: "En utilisant The Kraken Bot (« le Bot »), vous acceptez les présentes conditions d'utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser le Bot.",
+        terms_authorized_use_title: "Utilisation autorisée",
+        terms_authorized_use_text: "Vous vous engagez à :",
+        terms_authorized_use_item1: "Utiliser le Bot de manière conforme aux règles de Discord et à la loi en vigueur.",
+        terms_authorized_use_item2: "Ne pas utiliser le Bot pour harceler, abuser ou nuire à d'autres utilisateurs.",
+        terms_authorized_use_item3: "Ne pas modifier, distribuer ou copier le code source du Bot sans autorisation.",
+        terms_restrictions_title: "Restrictions",
+        terms_restrictions_text: "Il est strictement interdit de :",
+        terms_restrictions_item1: "Utiliser le Bot dans des serveurs qui promeuvent la haine, la violence ou tout contenu illégal.",
+        terms_restrictions_item2: "Exploiter ou tenter d'exploiter des vulnérabilités du Bot.",
+        terms_restrictions_item3: "Surcharger les services via des requêtes abusives.",
+        terms_availability_title: "Disponibilité et support",
+        terms_availability_text_1: "Le Bot est fourni « tel quel » sans garantie de disponibilité, de stabilité ou de performance.",
+        terms_availability_text_2: "Le support est disponible via le ",
+        terms_availability_text_3: ", mais sans obligation de réponse immédiate.",
+        discord_server: "serveur Discord officiel",
+        terms_termination_title: "Résiliation",
+        terms_termination_text: "L'équipe de développement se réserve le droit de :",
+        terms_termination_item1: "Retirer le Bot de tout serveur à sa discrétion, notamment en cas d'abus ou de non-respect des conditions.",
+        terms_termination_item2: "Suspendre ou cesser les mises à jour et le support à tout moment.",
+        terms_modifications_title: "Modifications",
+        terms_modifications_text: "Ces conditions peuvent être modifiées à tout moment. En cas de changement majeur, une notification sera faite via le serveur de support ou le site web du Bot.",
+        back_to_home: "Retour à l'accueil"
+      },
+      en: {
+        terms_title: "Terms of Service",
+        terms_acceptance_title: "Acceptance of Terms",
+        terms_acceptance_text: "By using The Kraken Bot (\"the Bot\"), you agree to these terms of service. If you do not agree to these terms, please do not use the Bot.",
+        terms_authorized_use_title: "Authorized Use",
+        terms_authorized_use_text: "You agree to:",
+        terms_authorized_use_item1: "Use the Bot in compliance with Discord's rules and applicable law.",
+        terms_authorized_use_item2: "Not use the Bot to harass, abuse, or harm other users.",
+        terms_authorized_use_item3: "Not modify, distribute, or copy the Bot's source code without authorization.",
+        terms_restrictions_title: "Restrictions",
+        terms_restrictions_text: "It is strictly forbidden to:",
+        terms_restrictions_item1: "Use the Bot on servers that promote hatred, violence, or any illegal content.",
+        terms_restrictions_item2: "Exploit or attempt to exploit Bot vulnerabilities.",
+        terms_restrictions_item3: "Overload services through abusive requests.",
+        terms_availability_title: "Availability and Support",
+        terms_availability_text_1: "The Bot is provided \"as is\" without guarantee of availability, stability, or performance.",
+        terms_availability_text_2: "Support is available via the ",
+        terms_availability_text_3: ", but without obligation for immediate response.",
+        discord_server: "official Discord server",
+        terms_termination_title: "Termination",
+        terms_termination_text: "The development team reserves the right to:",
+        terms_termination_item1: "Remove the Bot from any server at its discretion, particularly in case of abuse or non-compliance with terms.",
+        terms_termination_item2: "Suspend or cease updates and support at any time.",
+        terms_modifications_title: "Modifications",
+        terms_modifications_text: "These terms may be modified at any time. In case of major changes, notification will be made via the support server or the Bot's website.",
+        back_to_home: "Back to Home"
+      },
+      es: {
+        terms_title: "Términos de Servicio",
+        terms_acceptance_title: "Aceptación de Términos",
+        terms_acceptance_text: "Al usar The Kraken Bot (\"el Bot\"), aceptas estos términos de servicio. Si no aceptas estos términos, por favor no uses el Bot.",
+        terms_authorized_use_title: "Uso Autorizado",
+        terms_authorized_use_text: "Te comprometes a:",
+        terms_authorized_use_item1: "Usar el Bot de manera conforme a las reglas de Discord y la ley aplicable.",
+        terms_authorized_use_item2: "No usar el Bot para acosar, abusar o dañar a otros usuarios.",
+        terms_authorized_use_item3: "No modificar, distribuir o copiar el código fuente del Bot sin autorización.",
+        terms_restrictions_title: "Restricciones",
+        terms_restrictions_text: "Está estrictamente prohibido:",
+        terms_restrictions_item1: "Usar el Bot en servidores que promuevan odio, violencia o cualquier contenido ilegal.",
+        terms_restrictions_item2: "Explotar o intentar explotar vulnerabilidades del Bot.",
+        terms_restrictions_item3: "Sobrecargar los servicios mediante solicitudes abusivas.",
+        terms_availability_title: "Disponibilidad y Soporte",
+        terms_availability_text_1: "El Bot se proporciona \"tal como está\" sin garantía de disponibilidad, estabilidad o rendimiento.",
+        terms_availability_text_2: "El soporte está disponible a través del ",
+        terms_availability_text_3: ", pero sin obligación de respuesta inmediata.",
+        discord_server: "servidor oficial de Discord",
+        terms_termination_title: "Terminación",
+        terms_termination_text: "El equipo de desarrollo se reserva el derecho de:",
+        terms_termination_item1: "Retirar el Bot de cualquier servidor a su discreción, particularmente en caso de abuso o incumplimiento de términos.",
+        terms_termination_item2: "Suspender o cesar actualizaciones y soporte en cualquier momento.",
+        terms_modifications_title: "Modificaciones",
+        terms_modifications_text: "Estos términos pueden ser modificados en cualquier momento. En caso de cambios importantes, se hará una notificación a través del servidor de soporte o el sitio web del Bot.",
+        back_to_home: "Volver al Inicio"
+      }
+    };
+
+    let currentLang = 'fr';
+
+    function changeLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      
+      // Update all elements with data-i18n attributes
+      const elements = document.querySelectorAll('[data-i18n]');
+      elements.forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          element.textContent = translations[lang][key];
+        }
+      });
+
+      // Update page title
+      document.title = translations[lang].terms_title + " – The Kraken Bot";
+      
+      // Update language selector
+      document.getElementById('languageSelect').value = lang;
+    }
+
+    // Initialize page with default language
+    document.addEventListener('DOMContentLoaded', function() {
+      changeLang('fr');
+    });
+  </script>
 </body>
 </html>
