@@ -1,84 +1,147 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Kraken Bot</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Kraken Bot</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
 
-        header {
-            text-align: center;
-            padding: 2rem;
-            background-color: #161b22;
-        }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #161b22;
+      position: relative;
+      z-index: 1;
+    }
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-        }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
 
-        p {
-            color: #8b949e;
-        }
+    p {
+      color: #8b949e;
+    }
 
-        a.button {
-            display: inline-block;
-            margin: 1rem;
-            padding: 0.75rem 1.5rem;
-            background-color: #238636;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-        }
+    a.button {
+      display: inline-block;
+      margin: 1rem 0.5rem;
+      padding: 0.75rem 1.5rem;
+      background-color: #238636;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
 
-        a.button:hover {
-            background-color: #2ea043;
-        }
+    a.button:hover {
+      background-color: #2ea043;
+    }
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.9rem;
-            background-color: #161b22;
-            color: #6e7681;
-        }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background-color: #161b22;
+      color: #6e7681;
+      position: relative;
+      z-index: 1;
+    }
 
-        footer a {
-            color: #58a6ff;
-            margin: 0 10px;
-            text-decoration: none;
-        }
+    footer a {
+      color: #58a6ff;
+      margin: 0 10px;
+      text-decoration: none;
+    }
 
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Bubbles background */
+    ul.background-bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      overflow: hidden;
+    }
+
+    ul.background-bubbles li {
+      position: absolute;
+      display: block;
+      list-style: none;
+      width: 20px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      animation: bubble 20s linear infinite;
+      bottom: -150px;
+      border-radius: 50%;
+    }
+
+    ul.background-bubbles li:nth-child(1) { left: 25%; width: 80px; height: 80px; animation-duration: 22s; }
+    ul.background-bubbles li:nth-child(2) { left: 10%; width: 20px; height: 20px; animation-duration: 11s; }
+    ul.background-bubbles li:nth-child(3) { left: 70%; width: 20px; height: 20px; animation-duration: 15s; }
+    ul.background-bubbles li:nth-child(4) { left: 40%; width: 60px; height: 60px; animation-duration: 18s; }
+    ul.background-bubbles li:nth-child(5) { left: 65%; width: 20px; height: 20px; animation-duration: 12s; }
+    ul.background-bubbles li:nth-child(6) { left: 75%; width: 110px; height: 110px; animation-duration: 20s; }
+    ul.background-bubbles li:nth-child(7) { left: 35%; width: 150px; height: 150px; animation-duration: 25s; }
+    ul.background-bubbles li:nth-child(8) { left: 50%; width: 25px; height: 25px; animation-duration: 17s; }
+    ul.background-bubbles li:nth-child(9) { left: 20%; width: 15px; height: 15px; animation-duration: 10s; }
+    ul.background-bubbles li:nth-child(10) { left: 85%; width: 150px; height: 150px; animation-duration: 30s; }
+
+    @keyframes bubble {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.4;
+      }
+      100% {
+        transform: translateY(-1000px) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1> <img src="krn.jpg" alt="Logo Kraken Bot" style="height: 50px; vertical-align: middle; margin-right: 10px;">
-            The Kraken Bot</h1>
-        <p>Un bot Discord complet pour la musique, la modération, les sondages, et plus encore.</p>
-        <a href="features.html" class="button" style="background-color:#ff0000;">Fonctionnalités</a>
-        <a href="https://discord.gg/aXhAQSbM5E" class="button" style="background-color:#00ff0d;">💬 Serveur Support</a>
-        <a href="https://discord.com/oauth2/authorize?client_id=1362320470547894272&permissions=8&scope=bot%20applications.commands" class="button">Inviter le bot</a>
-        <a href="https://krakentime-winter-paper-1452.fly.dev/" class="button" style="background-color:#0366d6;">Dashboard</a>
-    </header>
+  <ul class="background-bubbles">
+    <li></li><li></li><li></li><li></li><li></li>
+    <li></li><li></li><li></li><li></li><li></li>
+  </ul>
 
-    <footer>
-        <a href="privacy.html">Politique de confidentialité</a> | 
-        <a href="terms.html">Conditions d'utilisation</a><br>
-        &copy; 2025 The Kraken Bot
-    </footer>
+  <header>
+    <h1>
+      <img src="krn.jpg" alt="Logo Kraken Bot" style="height: 50px; vertical-align: middle; margin-right: 10px;">
+      The Kraken Bot
+    </h1>
+    <p>Un bot Discord complet pour la musique, la modération, les sondages, et plus encore.</p>
+    <a href="features.html" class="button" style="background-color:#00ff0d;">Fonctionnalités</a>
+    <a href="https://discord.com/oauth2/authorize?client_id=1362320470547894272&permissions=8&scope=bot%20applications.commands" class="button">Inviter le bot</a>
+    <a href="https://krakentime-winter-paper-1452.fly.dev/" class="button" style="background-color:#0366d6;">Dashboard</a>
+    <a href="https://discord.gg/support" class="button" style="background-color:#6f42c1;">Serveur Support</a>
+  </header>
+
+  <footer>
+    <a href="privacy.html">Politique de confidentialité</a> |
+    <a href="terms.html">Conditions d'utilisation</a><br>
+    &copy; 2025 The Kraken Bot
+  </footer>
 </body>
 </html>
