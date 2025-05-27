@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>The Kraken Bot</title>
+  <title data-i18n="page_title">The Kraken Bot</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -169,16 +169,64 @@
   <footer>
     <a href="privacy.html" data-i18n="footer_privacy">Politique de confidentialité</a> |
     <a href="terms.html" data-i18n="footer_terms">Conditions d'utilisation</a><br>
-    &copy; 2025 The Kraken Bot
+    <span data-i18n="footer_copyright">&copy; 2025 The Kraken Bot</span>
   </footer>
 
   <script src="lang.js"></script>
   <script>
+    // Fonction pour mettre à jour le titre de la page
+    function updatePageTitle(lang) {
+      const titleElement = document.querySelector('title');
+      if (titleElement && translations[lang] && translations[lang].page_title) {
+        titleElement.textContent = translations[lang].page_title;
+      }
+    }
+
+    // Fonction modifiée changeLang
+    function changeLang(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang] && translations[lang][key]) {
+          el.textContent = translations[lang][key];
+        }
+      });
+      updatePageTitle(lang);
+      document.documentElement.lang = lang;
+    }
+
     // Charger langue enregistrée ou défaut (fr)
     window.addEventListener('load', () => {
-      const lang = localStorage.getItem('siteLang') || 'fr';
+      const lang = getSavedLanguage();
       changeLang(lang);
     });
+
+    // Fonction pour récupérer la langue sauvegardée
+    function getSavedLanguage() {
+      // Essayer de récupérer depuis localStorage si disponible
+      try {
+        return localStorage.getItem('siteLang') || 'fr';
+      } catch (e) {
+        // Si localStorage n'est pas disponible, utiliser une variable globale
+        return window.currentLanguage || 'fr';
+      }
+    }
+
+    // Fonction pour sauvegarder la langue
+    function saveLanguage(lang) {
+      try {
+        localStorage.setItem('siteLang', lang);
+      } catch (e) {
+        // Si localStorage n'est pas disponible, utiliser une variable globale
+        window.currentLanguage = lang;
+      }
+    }
+
+    // Mettre à jour la fonction changeLang pour sauvegarder
+    const originalChangeLang = changeLang;
+    changeLang = function(lang) {
+      originalChangeLang(lang);
+      saveLanguage(lang);
+    };
   </script>
 
 </body>
