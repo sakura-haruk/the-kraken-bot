@@ -11,6 +11,7 @@
       color: #c9d1d9;
       margin: 0;
       padding: 0;
+      line-height: 1.6;
     }
 
     header {
@@ -19,20 +20,32 @@
       text-align: center;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: #8b949e;
+      margin-top: 0.5rem;
+    }
+
+    .logo {
+      height: 50px;
+      vertical-align: middle;
+      margin-right: 10px;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       padding: 2rem;
     }
 
     h2 {
-      margin-top: 2rem;
+      margin-top: 2.5rem;
       color: #58a6ff;
+      font-size: 1.8rem;
     }
 
     ul {
@@ -41,7 +54,7 @@
     }
 
     li {
-      margin: 0.5rem 0;
+      margin: 0.6rem 0;
       padding-left: 1rem;
       border-left: 3px solid #30363d;
     }
@@ -67,13 +80,39 @@
       font-size: 1.2rem;
       margin-right: 0.4rem;
     }
+
+    .button {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.6rem 1.4rem;
+      background-color: #238636;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background-color: #2ea043;
+    }
+
+    .button.back {
+      background-color: #0366d6;
+    }
+
+    .button.back:hover {
+      background-color: #218bff;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>📖 Commandes disponibles</h1>
-    <p>Découvrez toutes les fonctionnalités de The Kraken Bot</p>
+    <h1>
+      <img src="krn.jpg" alt="Logo Kraken Bot" class="logo">Fonctionnalités
+    </h1>
+    <p>Découvrez toutes les commandes et modules disponibles dans The Kraken Bot</p>
+    <a href="index.html" class="button back">Retour à l'accueil</a>
   </header>
 
   <div class="container">
@@ -129,11 +168,6 @@
       <li>[prefix]listreact — Liste les auto-réactions</li>
     </ul>
 
-    <h2><span class="emoji">❓</span> Aide</h2>
-    <ul>
-      <li>[prefix]help — Affiche la liste des commandes</li>
-    </ul>
-
     <h2><span class="emoji">📊</span> Sondages</h2>
     <ul>
       <li>[prefix]poll &lt;question&gt; ; &lt;option1&gt; ; &lt;option2&gt; ... — Crée un sondage</li>
@@ -145,11 +179,17 @@
       <li>[prefix]setlangues — Permet de choisir ou retirer ses rôles de langues</li>
     </ul>
 
+    <h2><span class="emoji">❓</span> Aide</h2>
+    <ul>
+      <li>[prefix]help — Affiche la liste des commandes</li>
+    </ul>
+
   </div>
 
   <footer>
-    &copy; 2025 The Kraken Bot — <a href="index.html">Retour à l'accueil</a>
+    &copy; 2025 The Kraken Bot — <a href="privacy.html">Politique de confidentialité</a> | <a href="terms.html">Conditions d'utilisation</a>
   </footer>
 
 </body>
 </html>
+
