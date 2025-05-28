@@ -10,7 +10,7 @@ const translations = {
     btn_support: "Serveur Support",
     footer_privacy: "Politique de confidentialité",
     footer_terms: "Conditions d'utilisation",
-    footer_copyright: "&copy; 2025 The Kraken Bot",
+    footer_copyright: "© 2025 The Kraken Bot",
 
     // Page fonctionnalités (features.html)
     features_title_page: "Fonctionnalités - The Kraken Bot", // Nouvelle clé pour le titre de la page features
@@ -159,7 +159,7 @@ const translations = {
     btn_support: "Support Server",
     footer_privacy: "Privacy Policy",
     footer_terms: "Terms of Service",
-    footer_copyright: "&copy; 2025 The Kraken Bot",
+    footer_copyright: "© 2025 The Kraken Bot",
 
     // Features page (features.html)
     features_title_page: "Features - The Kraken Bot", // New key for features page title
@@ -308,7 +308,7 @@ const translations = {
     btn_support: "Servidor de soporte",
     footer_privacy: "Política de privacidad",
     footer_terms: "Términos de servicio",
-    footer_copyright: "&copy; 2025 The Kraken Bot",
+    footer_copyright: "© 2025 The Kraken Bot",
 
     // Página de características (features.html)
     features_title_page: "Características - The Kraken Bot", // Nueva clave para el título de la página features
