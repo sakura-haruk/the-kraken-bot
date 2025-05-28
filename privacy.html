@@ -17,6 +17,8 @@
       z-index: 1;
     }
 
+    /* Le sélecteur de langue est supprimé, donc ces styles ne sont plus nécessaires */
+    /*
     .language-selector {
       position: absolute;
       top: 20px;
@@ -37,6 +39,7 @@
       outline: none;
       box-shadow: 0 0 0 2px rgba(88, 166, 255, 0.3);
     }
+    */
 
     h1 {
       color: #58a6ff;
@@ -93,14 +96,6 @@
   </style>
 </head>
 <body>
-
-  <div class="language-selector">
-    <select onchange="changeLang(this.value)" id="languageSelect">
-      <option value="fr">Français</option>
-      <option value="en">English</option>
-      <option value="es">Español</option>
-    </select>
-  </div>
 
   <div class="bubbles">
     <div class="bubble" style="left: 10%; width: 40px; height: 40px; animation-duration: 15s;"></div>
@@ -170,24 +165,24 @@
     <a href="index.html" data-i18n="back_to_home">Retour à l'accueil</a>
   </footer>
 
-  <script src="lang.js"></script> <script>
+  <script src="lang.js"></script>
+  <script>
     // Ajout de la fonction pour mettre à jour le titre de la page
     function updatePageTitle(lang) {
       const titleElement = document.querySelector('title');
-      if (titleElement && translations[lang] && translations[lang].privacy_title) {
-        titleElement.textContent = translations[lang].privacy_title + " – The Kraken Bot";
+      if (titleElement && translations[lang] && translations[lang].privacy_title_page) { // Utilise privacy_title_page pour le titre
+        titleElement.textContent = translations[lang].privacy_title_page;
       }
     }
 
     // La fonction changeLang sera chargée depuis lang.js.
-    // Assurez-vous simplement qu'elle met à jour le titre de la page.
+    // Elle est étendue ici pour gérer les spécificités de cette page.
     const originalChangeLang = window.changeLang; // Garder une référence à la fonction originale de lang.js
 
     window.changeLang = function(lang) {
       originalChangeLang(lang); // Appeler la fonction originale pour les data-i18n
       updatePageTitle(lang); // Mettre à jour le titre spécifique à cette page
-      // Mettre à jour le sélecteur de langue pour qu'il reflète la langue actuelle
-      document.getElementById('languageSelect').value = lang;
+      // Pas besoin de mettre à jour le sélecteur de langue car il est supprimé
     };
 
     // Charger la langue au chargement de la page
@@ -196,6 +191,7 @@
       if (typeof loadLanguage === 'function') {
         loadLanguage();
       } else {
+        // Fallback si loadLanguage n'est pas encore défini (bien que lang.js soit inclus)
         let lang = 'fr';
         try {
           lang = localStorage.getItem('siteLang') || 'fr';
