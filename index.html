@@ -184,6 +184,10 @@
   </footer>
 
   <script src="lang.js"></script>
+  <script type="module" defer>
+  import { polyfillCountryFlagEmojis } from "https://cdn.skypack.dev/country-flag-emoji-polyfill";
+  polyfillCountryFlagEmojis();
+</script>
   <script>
     // La fonction `updatePageTitle` est déjà gérée directement dans `changeLang` du fichier `lang.js`
     // en fonction de l'URL de la page. Donc, cette fonction spécifique ici n'est plus nécessaire
